@@ -6,7 +6,7 @@ async function getData(URLs) {
 getData(URLs);
  */
 
-const URL = "https://api.disneyapi.dev/character";
+const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
 
 async function getData(url) {
     try {
@@ -21,7 +21,4 @@ async function getData(url) {
 getData(URL)
     .then(data => {
         console.log(data);
-    })
-    .catch(error => {
-        console.error(error);
     });
