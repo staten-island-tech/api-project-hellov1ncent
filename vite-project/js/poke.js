@@ -18,5 +18,5 @@ async function getData(url) {
 getData(URL)
     .then(data => {
         console.log(data)
-        data.results.forEach((name)=>console.log(name))
+/*         data.results.forEach((name)=>console.log(name)) */
     });

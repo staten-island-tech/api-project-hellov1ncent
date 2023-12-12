@@ -7,6 +7,11 @@
     <title>Vite App</title>
   </head>
   <body>
+    <form onsubmit="event.preventDefault();" role="search">
+      <label for="search">Search for stuff</label>
+      <input id="search" type="search" placeholder="Search..." autofocus required />
+      <button type="submit">Go</button>    
+    </form>
     <h1></h1>
     <div id="app"></div>
     <script type="module" src="./js/poke.js"></script>
