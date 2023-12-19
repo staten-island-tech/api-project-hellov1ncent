@@ -23,15 +23,15 @@ getData(URL)
 
 
 function insertCards(arr){
-    arr.forEach((name)=>{
+    arr.forEach((data)=>{
         DOMSelectors.column.insertAdjacentHTML(
             "beforeend",
             `<div class = "card">
-            <h3 class="name">${name.name}</h3>
-            <img src ="${name.url}" class ="img">
+            <h3 class="name">${data.name}</h3>
+            <img src ="${data.url}" class ="img">
             </div>`
         )
     })
 }
-insertCards(url);
+insertCards(arr.data);
 
