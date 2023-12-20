@@ -66,6 +66,10 @@ insertCards(arr.data);
   function createPokemonCard(pokemon) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'pokemon-card';
+    const name = document.createElement('h3');
+    name.textContent = pokemon.name;
+
+
 
     return cardDiv;
   }
