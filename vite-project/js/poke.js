@@ -5,9 +5,7 @@ async function getData(URLs) {
 }
 getData(URLs);
  */
-
 const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-
 async function getData(url) {
     try {
         const response = await fetch(url);
@@ -17,8 +15,23 @@ async function getData(url) {
         console.error("Error", error);
     }
 }
-
 getData(URL)
     .then(data => {
-        console.log(data);
+        console.log(data)
+        data.results.forEach((name)=>console.log(name))
     });
+
+
+function insertCards(arr){
+    arr.forEach((data)=>{
+        DOMSelectors.column.insertAdjacentHTML(
+            "beforeend",
+            `<div class = "card">
+            <h3 class="name">${data.name}</h3>
+            <img src ="${data.url}" class ="img">
+            </div>`
+        )
+    })
+}
+insertCards(arr.data);
+
