@@ -5,7 +5,7 @@ async function getData(URLs) {
 }
 getData(URLs);
  */
-const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+/* const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
 async function getData(url) {
     try {
         const response = await fetch(url);
@@ -35,3 +35,30 @@ function insertCards(arr){
 }
 insertCards(arr.data);
 
+ */
+
+
+  async function getData(url) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const pokemonList = await getData('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
+
+      await Promise.all(pokemonList.results.map(async (pokemon) => {
+        const pokemonData = await getData(pokemon.url);
+        const card = createPokemonCard(pokemonData);
+        document.body.appendChild(card);
+      }));
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
