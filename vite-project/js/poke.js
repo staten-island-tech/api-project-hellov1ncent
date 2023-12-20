@@ -17,7 +17,7 @@ async function getData(url) {
 }
 getData(URL)
     .then(data => {
-        console.log(data)
+        console.log(data.url)
         data.results.forEach((name)=>console.log(name))
     });
 
@@ -33,12 +33,14 @@ function insertCards(arr){
         )
     })
 }
-insertCards(arr.data);
+insertCards();
 
  */
 
 
-  async function getData(url) {
+
+
+async function getData(url) {
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -76,8 +78,6 @@ insertCards(arr.data);
 
     cardDiv.appendChild(name);
     cardDiv.appendChild(image);
-
-
 
     return cardDiv;
   }
