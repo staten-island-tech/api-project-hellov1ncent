@@ -62,3 +62,11 @@ insertCards(arr.data);
       console.error('Error:', error);
     }
   });
+
+  function createPokemonCard(pokemon) {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'pokemon-card';
+
+    return cardDiv;
+  }
+
