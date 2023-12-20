@@ -69,8 +69,15 @@ insertCards(arr.data);
     const name = document.createElement('h3');
     name.textContent = pokemon.name;
 
+    const image = document.createElement('img');
+    image.src = pokemon.sprites.front_default;
+    image.alt = pokemon.name;
+    image.className = 'pokemon-image';
+
+    cardDiv.appendChild(name);
+    cardDiv.appendChild(image);
+
 
 
     return cardDiv;
   }
-
