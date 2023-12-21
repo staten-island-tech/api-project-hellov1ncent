@@ -1,83 +1,15 @@
-/* const URLs = `https://api.disneyapi.dev/character`;
-async function getData(URLs) {
-    const response = await fetch(URLs);
-    const data = await response.json();
-}
-getData(URLs);
- */
-/* const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-async function getData(url) {
+const DOMSelectors = {
+    column: document.getElementById("pokemon-container"),
+};
+
+async function fetchData() {
     try {
-        const response = await fetch(url);
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
         const data = await response.json();
-        return data; 
+        const pokemonArray = data.results;
+
+        insertCards(pokemonArray);
     } catch (error) {
-        console.error("Error", error);
+        console.error("Error fetching data:", error);
     }
 }
-getData(URL)
-    .then(data => {
-        console.log(data.url)
-        data.results.forEach((name)=>console.log(name))
-    });
-
-
-function insertCards(arr){
-    arr.forEach((data)=>{
-        DOMSelectors.column.insertAdjacentHTML(
-            "beforeend",
-            `<div class = "card">
-            <h3 class="name">${data.name}</h3>
-            <img src ="${data.url}" class ="img">
-            </div>`
-        )
-    })
-}
-insertCards();
-
- */
-
-
-
-
-async function getData(url) {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      throw error;
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const pokemonList = await getData('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
-
-      await Promise.all(pokemonList.results.map(async (pokemon) => {
-        const pokemonData = await getData(pokemon.url);
-        const card = createPokemonCard(pokemonData);
-        document.body.appendChild(card);
-      }));
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  });
-
-  function createPokemonCard(pokemon) {
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'pokemon-card';
-    const name = document.createElement('h3');
-    name.textContent = pokemon.name;
-
-    const image = document.createElement('img');
-    image.src = pokemon.sprites.front_default;
-    image.alt = pokemon.name;
-    image.className = 'pokemon-image';
-
-    cardDiv.appendChild(name);
-    cardDiv.appendChild(image);
-
-    return cardDiv;
-  }

@@ -2,17 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon</title>
+    <title>Vite App</title>
   </head>
   <body>
-    <h1>Pokemon</h1>
-      <form onsubmit="event.preventDefault();" role="search">
-        <label for="search">Search for stuff</label>
-        <input id="search" type="search" placeholder="Search..." autofocus required />
-        <button type="submit">Go</button>   
-    <div  class=" column"> </div>
-    <script type="module" src="./js/test.js"></script>
-  </body> 
+    <div class="column" id="pokemon-container"></div>
+    <h1></h1>
+    <div id="app"></div>
+    <script type="module" src="./js/poke.js"></script>
+  </body>
 </html>
