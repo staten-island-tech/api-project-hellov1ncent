@@ -13,3 +13,20 @@ async function fetchData() {
         console.error("Error fetching data:", error);
     }
 }
+
+function insertCards(arr) {
+    arr.forEach(async (pokemon) => {
+        const response = await fetch(pokemon.url);
+        const data = await response.json();
+
+        DOMSelectors.column.insertAdjacentHTML(
+            "beforeend",
+            `<div class="card">
+                <h3 class="name">${data.name}</h3>
+                <img src="${data.sprites.front_default}" class="img">
+            </div>`
+        );
+    });
+}
+
+fetchData();
