@@ -1,0 +1,30 @@
+body {
+    background-color: #E1EFCA
+}
+
+
+.column {
+    display:flex;
+    width: 90%;
+    height: 100%;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin: 5rem auto;
+  }
+
+  .card {
+    
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 10%;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    margin: 6%;
+    height: 20vh;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
