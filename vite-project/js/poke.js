@@ -8,25 +8,35 @@ async function fetchData() {
         const data = await response.json();
         const pokemonArray = data.results;
 
-        insertCards(pokemonArray);
+        await insertCards(pokemonArray);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
 }
 
-function insertCards(arr) {
-    arr.forEach(async (pokemon) => {
-        const response = await fetch(pokemon.url);
-        const data = await response.json();
+async function insertCards(arr) {
+    for (const pokemon of arr) {
+        try {
+            const response = await fetch(pokemon.url);
+            const data = await response.json();
 
-        DOMSelectors.column.insertAdjacentHTML(
-            "beforeend",
-            `<div class="card">
-                <h3 class="name">${data.name}</h3>
-                <img src="${data.sprites.front_default}" class="img">
-            </div>`
-        );
-    });
+            DOMSelectors.column.insertAdjacentHTML(
+                "beforeend",
+                `<div class="card">
+                    <h3 class="name">${data.name}</h3>
+                    <img src="${data.sprites.front_default}" class="img">
+                </div>`
+            );
+        } catch (error) {
+            console.error("Error fetching Pokemon details:", error);
+        }
+    }
+}
+
+function searchPokemon() {
+    const searchInput = document.getElementById("searchInput");
+    const searchTerm = searchInput.value.toLowerCase();
+
 }
 
 fetchData();
