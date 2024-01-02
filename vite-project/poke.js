@@ -28,7 +28,7 @@ function insertCards(arr) {
                 "beforeend",
                 `<div class="card">
                     <h3 class="name">${data.name}</h3>
-                    <img src="${data.sprites.front_default}" class="img">
+                    <img src="${data.sprites.front_default}" class="img" alt="images">
                 </div>`
             );
         } catch (error) {
@@ -50,7 +50,7 @@ function filterButtonClick() {
     try {
         searchPokemon();
     } catch (error) {
-        console.error("Error in filterButtonClick:", error);
+        console.error("Error", error);
     }
 }
 
@@ -59,5 +59,5 @@ DOMSelectors.filterButton.addEventListener("click", filterButtonClick);
 try {
     fetchData();
 } catch (error) {
-    console.error("Error in fetchData:", error);
+    console.error("Error", error);
 }
