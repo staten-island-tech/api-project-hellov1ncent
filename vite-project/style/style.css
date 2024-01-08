@@ -37,3 +37,12 @@ h1{
 div{
     text-align: center;
 }
+.hi {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    color: black;
+}

@@ -27,8 +27,8 @@ function insertCards(arr) {
             DOMSelectors.column.insertAdjacentHTML(
                 "beforeend",
                 `<a href="${data.species.url}" class="card" target="_blank">
-                    <h3 class="name no-underline">${data.name}</h3>
-                    <img src="${data.sprites.front_default}" class="img" alt="images">
+                    <h2 class="name no-underline">${data.name}</h2>
+                    <img src="${data.sprites.front_default}" class="img" alt="${data.name}">
                 </a>`
             );
         } catch (error) {
