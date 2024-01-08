@@ -9,10 +9,15 @@
     <title>Vite App</title>
   </head>
   <body>
-    <input type="text" id="searchInput" placeholder="Search Pokemon">
-    <button id="filterButton">Filter</button>
+    <h1>Pokemon</h1>
+
+    <div class ="search">
+      <label for = "searchInput" class = "visually-hidden">Search Pokemon:</label>
+      <input type="text" id="searchInput" placeholder="Search Pokemon">
+      <button id="filterButton">Filter</button>
+    </div>
     <div class="column" id="pokemon-container"></div>
-    <h1></h1>
+
     <div id="app"></div>
     <script type="module" src="poke.js"></script>
   </body>

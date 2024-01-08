@@ -62,8 +62,3 @@ try {
 } catch (error) {
     console.error("Error", error);
 }
-<<<<<<< HEAD
-
-DOMSelectors
-=======
->>>>>>> 9d148fa6bc43fc0610aba5eaa4ebef2c047005d9
