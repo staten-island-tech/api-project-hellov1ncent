@@ -46,6 +46,7 @@ function searchPokemon() {
     }
 }
 
+
 function filterButtonClick() {
     try {
         searchPokemon();
@@ -61,3 +62,5 @@ try {
 } catch (error) {
     console.error("Error", error);
 }
+
+DOMSelectors
