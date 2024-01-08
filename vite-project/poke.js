@@ -26,10 +26,10 @@ function insertCards(arr) {
 
             DOMSelectors.column.insertAdjacentHTML(
                 "beforeend",
-                `<div class="card">
-                    <h3 class="name">${data.name}</h3>
+                `<a href="${data.species.url}" class="card" target="_blank">
+                    <h3 class="name no-underline">${data.name}</h3>
                     <img src="${data.sprites.front_default}" class="img" alt="images">
-                </div>`
+                </a>`
             );
         } catch (error) {
             console.error("Error fetching Pokemon details:", error);
@@ -62,5 +62,8 @@ try {
 } catch (error) {
     console.error("Error", error);
 }
+<<<<<<< HEAD
 
 DOMSelectors
+=======
+>>>>>>> 9d148fa6bc43fc0610aba5eaa4ebef2c047005d9
