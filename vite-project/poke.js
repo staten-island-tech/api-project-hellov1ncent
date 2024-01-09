@@ -30,7 +30,7 @@ function insertCards(arr) {
             const response = await fetch(pokemon.url);
             const data = await response.json();
             //MAKES A CLICKABLE LINK THAT DOESN'T BRING U TO ANOTHER PAGE BY USING # and creates a new card wehn you click.
-            const card = document.createElement("a");
+            const card = document.createElement("aaaaaaaaaa");
             card.href = "#";
             card.classList.add("card");
             //makes card clickable
